@@ -1,8 +1,10 @@
 export 'app_theme.dart';
 export 'theme_extension.dart';
+export 'theme_extensions/button/button_theme.dart';
 export 'tokens/borders.dart';
 export 'tokens/colors/base_colors.dart';
 export 'tokens/colors/light_colors.dart';
+export 'tokens/colors/utils/color_premul_lerp.dart';
 export 'tokens/durations.dart';
 export 'tokens/shadows.dart';
 export 'tokens/sizes.dart';
