@@ -5,12 +5,12 @@ import 'utils/color_premul_lerp.dart';
 
 // Color palette
 final class LightColors extends BaseColors {
-  static LightColors def = LightColors._(
+  static const def = LightColors._(
     white: Colors.white,
     black: Colors.black,
   );
 
-  LightColors._({
+  const LightColors._({
     required super.black,
     required super.white,
     Color? background,
@@ -25,7 +25,7 @@ final class LightColors extends BaseColors {
           foreground: foreground ?? const Color(0xFF1E2A32),
           grey50: grey50 ?? const Color(0xFF4D6475),
           grey100: grey100 ?? const Color(0xFF708797),
-          red: red ?? Colors.red.shade300,
+          red: red ?? const Color(0xFFE57373),
         );
 
   @override
