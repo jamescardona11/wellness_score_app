@@ -68,5 +68,7 @@ android/**
 ios/**
 
 
-.vscode/breakpoints/
-.vscode/breakpoints/**
+# Avoid commit generated files
+*.freezed.dart
+*.g.dart
+*.mocks.dart
