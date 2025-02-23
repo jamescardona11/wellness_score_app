@@ -12,6 +12,9 @@ abstract class AppTheme {
       extensions: [
         WellnessTheme._(
           tokens: tokens,
+          buttonTheme: AppButtonTheme(
+            tokens: tokens,
+          ),
         ),
       ],
     );
@@ -20,9 +23,11 @@ abstract class AppTheme {
 
 class WellnessTheme extends ThemeExtension<WellnessTheme> {
   final Tokens tokens;
+  final AppButtonTheme buttonTheme;
 
   WellnessTheme._({
     required this.tokens,
+    required this.buttonTheme,
   });
 
   static WellnessTheme of(BuildContext context) => context.theme;
@@ -36,9 +41,11 @@ class WellnessTheme extends ThemeExtension<WellnessTheme> {
   @override
   WellnessTheme copyWith({
     Tokens? tokens,
+    AppButtonTheme? buttonTheme,
   }) {
     return WellnessTheme._(
       tokens: tokens ?? this.tokens,
+      buttonTheme: buttonTheme ?? this.buttonTheme,
     );
   }
 
@@ -48,6 +55,7 @@ class WellnessTheme extends ThemeExtension<WellnessTheme> {
 
     return WellnessTheme._(
       tokens: tokens.lerp(other.tokens, t),
+      buttonTheme: buttonTheme.lerp(other.buttonTheme, t),
     );
   }
 }
