@@ -47,28 +47,14 @@ class AppButton extends StatelessWidget {
             color: _borderColor(theme) ?? _backgroundColor(theme) ?? Colors.transparent,
           ),
         ),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // Label
-                if (label.trim().isNotEmpty)
-                  Flexible(
-                    child: Text(
-                      label,
-                      style: theme.labelStyle.copyWith(
-                        color: _textColor(theme),
-                      ),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-              ],
-            )
-          ],
+        child: Center(
+          child: Text(
+            label,
+            style: theme.labelStyle.copyWith(
+              color: _textColor(theme),
+            ),
+            overflow: TextOverflow.ellipsis,
+          ),
         ),
       ),
     );
