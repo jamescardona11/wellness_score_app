@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'ui/core/theme/app_theme.dart';
+import 'ui/widgets/button/app_button.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -12,9 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: AppTheme.lightTheme,
       home: const HomePage(),
     );
   }
@@ -31,8 +32,12 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('AppBar Text'),
       ),
-      body: Container(
-        child: const Text('HomePage'),
+      body: Center(
+        child: AppButton.outlined(
+          label: 'Button',
+          enabled: false,
+          onPressed: () {},
+        ),
       ),
     );
   }
