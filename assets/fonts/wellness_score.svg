@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2025 by original authors @ fontello.com</metadata>
+<defs>
+<font id="wellness_score" horiz-adv-x="1000" >
+<font-face font-family="wellness_score" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="dollar_icon" unicode="&#xe900;" d="M500 850c23 0 42-19 42-42v-916c0-23-19-42-42-42s-42 19-42 42v916c0 23 19 42 42 42z m-237-222c35 36 83 55 133 55h312c23 0 42-18 42-41s-19-42-42-42h-312c-28 0-54-11-74-30s-30-46-30-74c0-28 11-54 30-74 20-19 46-30 74-30h208c50 0 98-20 133-55s55-83 55-133c0-50-20-97-55-132s-83-55-133-55h-354c-23 0-42 18-42 41s19 42 42 42h354c28 0 54 11 74 31 19 19 30 46 30 73s-11 54-30 74c-20 19-46 30-74 30h-208c-50 0-98 20-133 55s-55 83-55 133c0 50 20 97 55 132z" horiz-adv-x="1000" />
+
+<glyph glyph-name="lock_icon" unicode="&#xe901;" d="M208 350c-23 0-41-19-41-42v-291c0-23 18-42 41-42h584c23 0 41 19 41 42v291c0 23-18 42-41 42h-584z m-125-42c0 69 56 125 125 125h584c69 0 125-56 125-125v-291c0-69-56-125-125-125h-584c-69 0-125 56-125 125v291z m417 417c-44 0-87-18-118-49s-49-73-49-118v-166c0-23-18-42-41-42s-42 19-42 42v166c0 67 26 130 73 177s111 73 177 73c66 0 130-26 177-73 47-47 73-110 73-177v-166c0-23-19-42-42-42s-41 19-41 42v166c0 45-18 87-49 118-31 31-74 49-118 49z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>
