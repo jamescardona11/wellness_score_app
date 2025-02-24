@@ -2,7 +2,7 @@ import 'package:wellness_score_app/config/constants/analytics_constants.dart';
 import 'package:wellness_score_app/domain/repositories/analytics_repository.dart';
 import 'package:wellness_score_app/domain/types/health_status.dart';
 
-final class HealthScoreUseCase {
+class HealthScoreUseCase {
   final AnalyticsRepository _analyticsRepository;
 
   HealthScoreUseCase(this._analyticsRepository);

@@ -1,7 +1,7 @@
 part of 'wellness_calculator_cubit.dart';
 
 @immutable
-class WellnessCalculatorState with EquatableMixin {
+class WellnessCalculatorState extends Equatable {
   final double annualIncome;
   final double monthlyCosts;
   final HealthStatus? healthStatus;
