@@ -44,6 +44,13 @@ class AppText extends StatelessWidget {
     this.textAlign,
   }) : style = AppTypography.typography.paragraph;
 
+  AppText.paragraphBold(
+    this.text, {
+    super.key,
+    this.color,
+    this.textAlign,
+  }) : style = AppTypography.typography.paragraphBold;
+
   AppText.description(
     this.text, {
     super.key,

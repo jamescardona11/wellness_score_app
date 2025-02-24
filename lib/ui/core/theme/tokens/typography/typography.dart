@@ -33,6 +33,11 @@ class AppTypography extends ThemeExtension<AppTypography> {
       fontSize: 14,
       height: 21 / 14,
     ),
+    paragraphBold: GoogleFonts.workSans(
+      fontWeight: FontWeight.w600,
+      fontSize: 14,
+      height: 21 / 16,
+    ),
     description: GoogleFonts.workSans(
       fontWeight: FontWeight.w400,
       fontSize: 12,
@@ -47,6 +52,7 @@ class AppTypography extends ThemeExtension<AppTypography> {
     required this.subtitleXS,
     required this.button,
     required this.paragraph,
+    required this.paragraphBold,
     required this.description,
   });
 
@@ -56,6 +62,7 @@ class AppTypography extends ThemeExtension<AppTypography> {
   final TextStyle subtitleXS;
   final TextStyle button;
   final TextStyle paragraph;
+  final TextStyle paragraphBold;
   final TextStyle description;
 
   @override
@@ -66,6 +73,7 @@ class AppTypography extends ThemeExtension<AppTypography> {
     TextStyle? subtitleXS,
     TextStyle? button,
     TextStyle? paragraph,
+    TextStyle? paragraphBold,
     TextStyle? description,
   }) {
     return AppTypography._(
@@ -75,6 +83,7 @@ class AppTypography extends ThemeExtension<AppTypography> {
       subtitleXS: subtitleXS ?? this.subtitleXS,
       button: button ?? this.button,
       paragraph: paragraph ?? this.paragraph,
+      paragraphBold: paragraphBold ?? this.paragraphBold,
       description: description ?? this.description,
     );
   }
@@ -90,6 +99,7 @@ class AppTypography extends ThemeExtension<AppTypography> {
       subtitleXS: TextStyle.lerp(subtitleXS, other.subtitleXS, t)!,
       button: TextStyle.lerp(button, other.button, t)!,
       paragraph: TextStyle.lerp(paragraph, other.paragraph, t)!,
+      paragraphBold: TextStyle.lerp(paragraphBold, other.paragraphBold, t)!,
       description: TextStyle.lerp(description, other.description, t)!,
     );
   }

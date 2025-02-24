@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:wellness_score_app/domain/types/health_status.dart';
 import 'package:wellness_score_app/ui/features/health_calculator/health_calculator_screen.dart';
-import 'package:wellness_score_app/ui/features/health_result/health_result.dart';
+import 'package:wellness_score_app/ui/features/health_result/health_result_screen.dart';
 
 abstract class AppRouter {
   static const String calculator = '/';
@@ -18,7 +18,7 @@ abstract class AppRouter {
         path: result,
         builder: (context, state) {
           final healthStatus = state.extra as HealthStatus;
-          return HealthResult(
+          return HealthResultScreen(
             healthStatus: healthStatus,
           );
         },
