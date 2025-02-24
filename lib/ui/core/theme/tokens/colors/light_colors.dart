@@ -21,6 +21,10 @@ final class LightColors extends BaseColors {
     Color? grey200,
     Color? grey300,
     Color? red,
+    Color? progressBarGreen,
+    Color? progressBarYellow,
+    Color? progressBarRed,
+    Color? progressBarGrey,
   }) : super(
           primary: primary ?? const Color(0xFF001C95),
           background: background ?? const Color(0xFFF4F8FA),
@@ -30,6 +34,10 @@ final class LightColors extends BaseColors {
           grey200: grey200 ?? const Color(0xFF8A9CA9),
           grey300: grey300 ?? const Color(0xFF4D6475),
           red: red ?? const Color(0xFFE57373),
+          progressBarGreen: progressBarGreen ?? const Color(0xFF04C761),
+          progressBarYellow: progressBarYellow ?? const Color(0xFFFFC032),
+          progressBarRed: progressBarRed ?? const Color(0xFFD32A36),
+          progressBarGrey: progressBarGrey ?? const Color(0xFFE9EEF2),
         );
 
   @override
@@ -44,6 +52,10 @@ final class LightColors extends BaseColors {
     Color? grey200,
     Color? grey300,
     Color? red,
+    Color? progressBarGreen,
+    Color? progressBarYellow,
+    Color? progressBarRed,
+    Color? progressBarGrey,
   }) {
     return LightColors._(
       black: black ?? this.black,
@@ -56,6 +68,10 @@ final class LightColors extends BaseColors {
       grey200: grey200 ?? this.grey200,
       grey300: grey300 ?? this.grey300,
       red: red ?? this.red,
+      progressBarGreen: progressBarGreen ?? this.progressBarGreen,
+      progressBarYellow: progressBarYellow ?? this.progressBarYellow,
+      progressBarRed: progressBarRed ?? this.progressBarRed,
+      progressBarGrey: progressBarGrey ?? this.progressBarGrey,
     );
   }
 
@@ -74,6 +90,10 @@ final class LightColors extends BaseColors {
       grey200: colorPremulLerp(grey200, other.grey200, t)!,
       grey300: colorPremulLerp(grey300, other.grey300, t)!,
       red: colorPremulLerp(red, other.red, t)!,
+      progressBarGreen: colorPremulLerp(progressBarGreen, other.progressBarGreen, t)!,
+      progressBarYellow: colorPremulLerp(progressBarYellow, other.progressBarYellow, t)!,
+      progressBarRed: colorPremulLerp(progressBarRed, other.progressBarRed, t)!,
+      progressBarGrey: colorPremulLerp(progressBarGrey, other.progressBarGrey, t)!,
     );
   }
 }

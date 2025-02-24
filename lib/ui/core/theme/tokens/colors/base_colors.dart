@@ -16,6 +16,11 @@ abstract base class BaseColors extends ThemeExtension<BaseColors> {
   final Color grey300;
   final Color red;
 
+  final Color progressBarGreen;
+  final Color progressBarYellow;
+  final Color progressBarRed;
+  final Color progressBarGrey;
+
   const BaseColors({
     required this.black,
     required this.white,
@@ -27,6 +32,10 @@ abstract base class BaseColors extends ThemeExtension<BaseColors> {
     required this.grey200,
     required this.grey300,
     required this.red,
+    required this.progressBarGreen,
+    required this.progressBarYellow,
+    required this.progressBarRed,
+    required this.progressBarGrey,
   });
 
   @override
