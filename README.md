@@ -29,10 +29,11 @@
     - [User Experience (UX/UI) Enhancements](#user-experience-uxui-enhancements)
     - [Business Logic \& Score Accuracy Enhancements](#business-logic--score-accuracy-enhancements)
     - [Service Improvements](#service-improvements)
-  - [Git and Branching Strategy](#git-and-branching-strategy)
+  - [Git and Branching Strategy (Suggestion)](#git-and-branching-strategy-suggestion)
     - [How to merge a feature branch into main](#how-to-merge-a-feature-branch-into-main)
       - [Sync](#sync)
       - [Development Workflow](#development-workflow)
+  - [Contact](#contact)
 
 
 # Overview
@@ -255,7 +256,7 @@ We want to create unit tests for the business rules and widget tests for the UI.
 
 ## Future improvements
 
-Here's a list of **feature improvements** that could enhance the user experience, functionality, and scalability of your project:
+Here's a list of **feature improvements** that could enhance the user experience, functionality, and scalability:
 
 ### User Experience (UX/UI) Enhancements
 1. **Dark Mode Support**: Implement a dark theme for better usability.
@@ -276,7 +277,7 @@ Here's a list of **feature improvements** that could enhance the user experience
 
 
 
-## Git and Branching Strategy
+## Git and Branching Strategy (Suggestion)
 
 We use the following branching strategy:
 
@@ -321,3 +322,11 @@ git pull origin main --no-rebase
 - git push -f origin <branch>
 - Request review from reviewers.
 - *Squash merge* to main when approved.
+
+
+## Contact
+
+If you have any questions or suggestions, please contact us at:
+
+- [Linkedin](https://www.linkedin.com/in/jamescardona11/)
+- [Github](https://github.com/jamescardona11)
