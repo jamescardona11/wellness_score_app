@@ -14,10 +14,10 @@ import 'package:wellness_score_app/ui/widgets/text/app_text.dart';
 
 import 'components/score_indicator.dart';
 
-class HealthResultScreen extends StatelessWidget {
+class WellnessResultScreen extends StatelessWidget {
   final HealthStatus healthStatus;
 
-  const HealthResultScreen({
+  const WellnessResultScreen({
     super.key,
     required this.healthStatus,
   });

@@ -4,14 +4,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wellness_score_app/domain/types/health_status.dart';
 import 'package:wellness_score_app/domain/use_cases/health_score_use_case.dart';
 
-part 'health_calculator_state.dart';
+part 'wellness_calculator_state.dart';
 
-class HealthCalculatorCubit extends Cubit<HealthCalculatorState> {
+class WellnessCalculatorCubit extends Cubit<WellnessCalculatorState> {
   final HealthScoreUseCase healthScoreUseCase;
 
-  HealthCalculatorCubit({
+  WellnessCalculatorCubit({
     required this.healthScoreUseCase,
-  }) : super(const HealthCalculatorState());
+  }) : super(const WellnessCalculatorState());
 
   void onAnnualIncomeChanged(double value) {
     emit(state.copyWith(annualIncome: value));
@@ -24,12 +24,18 @@ class HealthCalculatorCubit extends Cubit<HealthCalculatorState> {
   void onContinuePressed() {
     if (!state.isFormValid) return;
 
-    final healthStatusResult = healthScoreUseCase.call(
-      annualIncome: state.annualIncome,
-      monthlyCosts: state.monthlyCosts,
-    );
-
-    emit(state.copyWith(healthStatus: healthStatusResult));
+    try {
+      final healthStatusResult = healthScoreUseCase.call(
+        annualIncome: state.annualIncome,
+        monthlyCosts: state.monthlyCosts,
+      );
+      emit(state.copyWith(healthStatus: healthStatusResult));
+    } catch (_) {
+      emit(state.copyWith(error: true));
+      Future.delayed(const Duration(seconds: 3), () {
+        emit(state.copyWith(error: false));
+      });
+    }
   }
 
   void reset() {
