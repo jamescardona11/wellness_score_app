@@ -94,10 +94,12 @@ void main() {
         ),
       ],
       verify: (_) {
-        verify(mockHealthScoreUseCase(
-          annualIncome: 50000,
-          monthlyCosts: 2000,
-        )).called(1);
+        verify(
+          mockHealthScoreUseCase(
+            annualIncome: 50000,
+            monthlyCosts: 2000,
+          ),
+        ).called(1);
       },
     );
 

@@ -20,7 +20,10 @@ import 'cubit/wellness_calculator_cubit.dart';
 class WellnessCalculatorScreen extends StatelessWidget {
   const WellnessCalculatorScreen({
     super.key,
+    this.cubit,
   });
+
+  final WellnessCalculatorCubit? cubit;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +31,7 @@ class WellnessCalculatorScreen extends StatelessWidget {
     final sizes = context.sizes;
 
     return BlocProvider(
-      create: (context) => getIt<WellnessCalculatorCubit>(),
+      create: (context) => cubit ?? getIt<WellnessCalculatorCubit>(),
       child: BlocListener<WellnessCalculatorCubit, WellnessCalculatorState>(
         listenWhen: (p, c) => c.healthStatus != null,
         listener: (context, state) {
