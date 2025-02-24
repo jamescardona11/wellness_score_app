@@ -10,10 +10,10 @@ class AppInputFieldTheme extends ThemeExtension<AppInputFieldTheme> {
   final TextStyle style;
   final EdgeInsetsGeometry contentPadding;
   final EdgeInsetsGeometry iconPadding;
-  final double iconConstraints;
   final Color textColor;
   final Color borderColor;
   final Color errorBorderColor;
+  final Color iconColor;
 
   AppInputFieldTheme({
     required this.tokens,
@@ -22,19 +22,19 @@ class AppInputFieldTheme extends ThemeExtension<AppInputFieldTheme> {
     TextStyle? style,
     EdgeInsetsGeometry? contentPadding,
     EdgeInsetsGeometry? iconPadding,
-    double? iconConstraints,
     Color? textColor,
     Color? borderColor,
     Color? errorBorderColor,
+    Color? iconColor,
   })  : width = width ?? double.infinity,
         height = height ?? tokens.sizes.x14,
         style = style ?? tokens.typography.title1.copyWith(color: tokens.colors.foreground),
         contentPadding = contentPadding ?? EdgeInsets.symmetric(horizontal: tokens.sizes.x3, vertical: tokens.sizes.x4),
         iconPadding = iconPadding ?? EdgeInsets.only(left: tokens.sizes.x3, right: tokens.sizes.x2),
-        iconConstraints = iconConstraints ?? tokens.sizes.x6,
         textColor = textColor ?? tokens.colors.foreground,
         borderColor = borderColor ?? tokens.colors.background,
-        errorBorderColor = errorBorderColor ?? tokens.colors.red;
+        errorBorderColor = errorBorderColor ?? tokens.colors.red,
+        iconColor = iconColor ?? tokens.colors.grey50;
 
   @override
   AppInputFieldTheme copyWith({
@@ -43,10 +43,10 @@ class AppInputFieldTheme extends ThemeExtension<AppInputFieldTheme> {
     TextStyle? style,
     EdgeInsetsGeometry? contentPadding,
     EdgeInsetsGeometry? iconPadding,
-    double? iconConstraints,
     Color? textColor,
     Color? borderColor,
     Color? errorBorderColor,
+    Color? iconColor,
   }) {
     return AppInputFieldTheme(
       tokens: tokens,
@@ -55,7 +55,7 @@ class AppInputFieldTheme extends ThemeExtension<AppInputFieldTheme> {
       style: style ?? this.style,
       contentPadding: contentPadding ?? this.contentPadding,
       iconPadding: iconPadding ?? this.iconPadding,
-      iconConstraints: iconConstraints ?? this.iconConstraints,
+      iconColor: iconColor ?? this.iconColor,
       textColor: textColor ?? this.textColor,
       borderColor: borderColor ?? this.borderColor,
       errorBorderColor: errorBorderColor ?? this.errorBorderColor,
@@ -76,7 +76,7 @@ class AppInputFieldTheme extends ThemeExtension<AppInputFieldTheme> {
       style: TextStyle.lerp(style, other.style, t),
       contentPadding: EdgeInsetsGeometry.lerp(contentPadding, other.contentPadding, t),
       iconPadding: EdgeInsetsGeometry.lerp(iconPadding, other.iconPadding, t),
-      iconConstraints: lerpDouble(iconConstraints, other.iconConstraints, t),
+      iconColor: colorPremulLerp(iconColor, other.iconColor, t),
       textColor: colorPremulLerp(textColor, other.textColor, t),
       borderColor: colorPremulLerp(borderColor, other.borderColor, t),
       errorBorderColor: colorPremulLerp(errorBorderColor, other.errorBorderColor, t),

@@ -1,6 +1,7 @@
 export 'app_theme.dart';
 export 'theme_extension.dart';
 export 'theme_extensions/button/button_theme.dart';
+export 'theme_extensions/text/input_field_theme.dart';
 export 'tokens/borders.dart';
 export 'tokens/colors/base_colors.dart';
 export 'tokens/colors/light_colors.dart';
