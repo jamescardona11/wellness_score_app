@@ -6,6 +6,7 @@ import 'package:wellness_score_app/config/assets/app_assets.dart';
 import 'package:wellness_score_app/config/constants/en_text_constants.dart';
 import 'package:wellness_score_app/config/di/di.dart';
 import 'package:wellness_score_app/config/navigator/app_router.dart';
+import 'package:wellness_score_app/ui/core/shared_widgets/snackbar_error.dart';
 import 'package:wellness_score_app/ui/core/theme/theme.dart';
 import 'package:wellness_score_app/ui/widgets/app_bar_widget.dart';
 import 'package:wellness_score_app/ui/widgets/button/app_button.dart';
@@ -33,53 +34,61 @@ class WellnessCalculatorScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => cubit ?? getIt<WellnessCalculatorCubit>(),
       child: BlocListener<WellnessCalculatorCubit, WellnessCalculatorState>(
-        listenWhen: (p, c) => c.healthStatus != null,
+        listenWhen: (p, c) => c.error != null,
         listener: (context, state) {
-          final status = state.healthStatus;
-          final cubit = context.read<WellnessCalculatorCubit>();
-
-          context
-              .push(
-                AppRouter.result,
-                extra: status,
-              )
-              .then((_) => cubit.reset());
+          if (state.error == true) {
+            SnackBarError.show(context, message: TextConstants.errorCalculatingScore);
+          }
         },
-        child: Scaffold(
-          resizeToAvoidBottomInset: true,
-          appBar: const AppBarWidget(),
-          body: GestureDetector(
-            onTap: () => FocusScope.of(context).unfocus(),
-            child: SingleChildScrollView(
-              reverse: true,
-              child: Padding(
-                padding: sizes.x5.paddingHorizontal,
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: sizes.x5.paddingVertical,
-                      child: const RichTextHeader(
-                        span1: TextConstants.financialWellnessScore,
-                        span2: TextConstants.financialWellnessScoreDescription,
+        child: BlocListener<WellnessCalculatorCubit, WellnessCalculatorState>(
+          listenWhen: (p, c) => c.healthStatus != null,
+          listener: (context, state) {
+            final status = state.healthStatus;
+            final cubit = context.read<WellnessCalculatorCubit>();
+
+            context
+                .push(
+                  AppRouter.result,
+                  extra: status,
+                )
+                .then((_) => cubit.reset());
+          },
+          child: Scaffold(
+            resizeToAvoidBottomInset: true,
+            appBar: const AppBarWidget(),
+            body: GestureDetector(
+              onTap: () => FocusScope.of(context).unfocus(),
+              child: SingleChildScrollView(
+                reverse: true,
+                child: Padding(
+                  padding: sizes.x5.paddingHorizontal,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: sizes.x5.paddingVertical,
+                        child: const RichTextHeader(
+                          span1: TextConstants.financialWellnessScore,
+                          span2: TextConstants.financialWellnessScoreDescription,
+                        ),
                       ),
-                    ),
-                    CardWidget(
-                      child: Column(
-                        children: [
-                          SvgPicture.asset(AppAssets.score, height: sizes.x12),
-                          SizedBox(height: sizes.x4),
-                          AppText.headingXS(TextConstants.financialWellnessTest),
-                          AppText.paragraph(
-                            TextConstants.financialWellnessTestDescription,
-                            color: colors.grey100,
-                          ),
-                          SizedBox(height: sizes.x4),
-                          const _ScoreCalculatorForm(),
-                        ],
+                      CardWidget(
+                        child: Column(
+                          children: [
+                            SvgPicture.asset(AppAssets.score, height: sizes.x12),
+                            SizedBox(height: sizes.x4),
+                            AppText.headingXS(TextConstants.financialWellnessTest),
+                            AppText.paragraph(
+                              TextConstants.financialWellnessTestDescription,
+                              color: colors.grey100,
+                            ),
+                            SizedBox(height: sizes.x4),
+                            const _ScoreCalculatorForm(),
+                          ],
+                        ),
                       ),
-                    ),
-                    const SecureTextWidget(),
-                  ],
+                      const SecureTextWidget(),
+                    ],
+                  ),
                 ),
               ),
             ),

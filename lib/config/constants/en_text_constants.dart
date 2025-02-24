@@ -22,4 +22,7 @@ abstract class TextConstants {
   static const String healthyScoreResultName = 'Healthy.';
   static const String mediumScoreResultName = 'Average.';
   static const String lowScoreResultName = 'Unhealthy.';
+
+  static const String dismissSnackBar = 'Dismiss';
+  static const String errorCalculatingScore = 'Error calculating your financial wellness score';
 }

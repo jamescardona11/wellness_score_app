@@ -24,12 +24,15 @@ class WellnessCalculatorCubit extends Cubit<WellnessCalculatorState> {
   void onContinuePressed() {
     if (!state.isFormValid) return;
 
-    final healthStatusResult = healthScoreUseCase.call(
-      annualIncome: state.annualIncome,
-      monthlyCosts: state.monthlyCosts,
-    );
-
-    emit(state.copyWith(healthStatus: healthStatusResult));
+    try {
+      final healthStatusResult = healthScoreUseCase.call(
+        annualIncome: state.annualIncome,
+        monthlyCosts: state.monthlyCosts,
+      );
+      emit(state.copyWith(healthStatus: healthStatusResult));
+    } catch (e) {
+      emit(state.copyWith(error: true));
+    }
   }
 
   void reset() {
