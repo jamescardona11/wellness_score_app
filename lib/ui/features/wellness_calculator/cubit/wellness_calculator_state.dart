@@ -1,25 +1,25 @@
-part of 'health_calculator_cubit.dart';
+part of 'wellness_calculator_cubit.dart';
 
 @immutable
-class HealthCalculatorState with EquatableMixin {
+class WellnessCalculatorState with EquatableMixin {
   final double annualIncome;
   final double monthlyCosts;
   final HealthStatus? healthStatus;
 
   bool get isFormValid => annualIncome > 0 && monthlyCosts > 0;
 
-  const HealthCalculatorState({
+  const WellnessCalculatorState({
     this.annualIncome = 0,
     this.monthlyCosts = 0,
     this.healthStatus,
   });
 
-  HealthCalculatorState copyWith({
+  WellnessCalculatorState copyWith({
     double? annualIncome,
     double? monthlyCosts,
     HealthStatus? healthStatus,
   }) =>
-      HealthCalculatorState(
+      WellnessCalculatorState(
         annualIncome: annualIncome ?? this.annualIncome,
         monthlyCosts: monthlyCosts ?? this.monthlyCosts,
         healthStatus: healthStatus,

@@ -15,10 +15,10 @@ import 'package:wellness_score_app/ui/widgets/secure_text_widget.dart';
 import 'package:wellness_score_app/ui/widgets/text/app_text.dart';
 import 'package:wellness_score_app/ui/widgets/text/input/finance_input_field.dart';
 
-import 'cubit/health_calculator_cubit.dart';
+import 'cubit/wellness_calculator_cubit.dart';
 
-class HealthCalculatorScreen extends StatelessWidget {
-  const HealthCalculatorScreen({
+class WellnessCalculatorScreen extends StatelessWidget {
+  const WellnessCalculatorScreen({
     super.key,
   });
 
@@ -28,12 +28,12 @@ class HealthCalculatorScreen extends StatelessWidget {
     final sizes = context.sizes;
 
     return BlocProvider(
-      create: (context) => getIt<HealthCalculatorCubit>(),
-      child: BlocListener<HealthCalculatorCubit, HealthCalculatorState>(
+      create: (context) => getIt<WellnessCalculatorCubit>(),
+      child: BlocListener<WellnessCalculatorCubit, WellnessCalculatorState>(
         listenWhen: (p, c) => c.healthStatus != null,
         listener: (context, state) {
           final status = state.healthStatus;
-          final cubit = context.read<HealthCalculatorCubit>();
+          final cubit = context.read<WellnessCalculatorCubit>();
 
           context
               .push(
@@ -92,7 +92,7 @@ class _ScoreCalculatorForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cubit = context.read<HealthCalculatorCubit>();
+    final cubit = context.read<WellnessCalculatorCubit>();
     final sizes = context.sizes;
     return Column(
       children: [
@@ -108,7 +108,7 @@ class _ScoreCalculatorForm extends StatelessWidget {
           action: TextInputAction.done,
         ),
         SizedBox(height: sizes.x4),
-        BlocSelector<HealthCalculatorCubit, HealthCalculatorState, bool>(
+        BlocSelector<WellnessCalculatorCubit, WellnessCalculatorState, bool>(
           selector: (state) {
             return state.isFormValid;
           },

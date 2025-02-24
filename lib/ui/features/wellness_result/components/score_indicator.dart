@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wellness_score_app/domain/types/health_status.dart';
 import 'package:wellness_score_app/ui/core/theme/theme.dart';
-import 'package:wellness_score_app/ui/features/health_result/components/segmented_progress_painter.dart';
+import 'package:wellness_score_app/ui/features/wellness_result/components/segmented_progress_painter.dart';
 
 class HealthScoreResult extends StatelessWidget {
   const HealthScoreResult({
