@@ -4,9 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wellness_score_app/config/assets/app_assets.dart';
 import 'package:wellness_score_app/config/constants/en_text_constants.dart';
+import 'package:wellness_score_app/config/di/di.dart';
 import 'package:wellness_score_app/config/navigator/app_router.dart';
-import 'package:wellness_score_app/data/repositories/mock_analytics_repository.dart';
-import 'package:wellness_score_app/domain/use_cases/health_score_use_case.dart';
 import 'package:wellness_score_app/ui/core/theme/theme.dart';
 import 'package:wellness_score_app/ui/widgets/app_bar_widget.dart';
 import 'package:wellness_score_app/ui/widgets/button/app_button.dart';
@@ -29,9 +28,7 @@ class HealthCalculatorScreen extends StatelessWidget {
     final sizes = context.sizes;
 
     return BlocProvider(
-      create: (context) => HealthCalculatorCubit(
-        healthScoreUseCase: HealthScoreUseCase(MockAnalyticsRepository()),
-      ),
+      create: (context) => getIt<HealthCalculatorCubit>(),
       child: BlocListener<HealthCalculatorCubit, HealthCalculatorState>(
         listenWhen: (p, c) => c.healthStatus != null,
         listener: (context, state) {

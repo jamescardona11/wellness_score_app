@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:wellness_score_app/config/di/di.dart';
 import 'package:wellness_score_app/config/navigator/app_router.dart';
 import 'package:wellness_score_app/ui/core/theme/app_theme.dart';
 
 void main() {
+  configureDependencies();
   runApp(const MyApp());
 }
 
