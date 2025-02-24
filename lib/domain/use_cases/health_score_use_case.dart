@@ -2,10 +2,10 @@ import 'package:wellness_score_app/config/constants/analytics_constants.dart';
 import 'package:wellness_score_app/domain/repositories/analytics_repository.dart';
 import 'package:wellness_score_app/domain/types/health_status.dart';
 
-final class HealthScore {
+final class HealthScoreUseCase {
   final AnalyticsRepository _analyticsRepository;
 
-  HealthScore(this._analyticsRepository);
+  HealthScoreUseCase(this._analyticsRepository);
 
   static const _TAX_RATE = 0.08;
   static const _HEALTHY_THRESHOLD = 0.25;
@@ -16,7 +16,7 @@ final class HealthScore {
     required double monthlyCosts,
   }) {
     assert(
-      annualIncome >= 0 && monthlyCosts >= 0,
+      annualIncome > 0 && monthlyCosts > 0,
       'Annual income and monthly costs must be greater or equal to 0',
     );
 
