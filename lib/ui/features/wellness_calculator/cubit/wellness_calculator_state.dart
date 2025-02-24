@@ -5,7 +5,7 @@ class WellnessCalculatorState extends Equatable {
   final double annualIncome;
   final double monthlyCosts;
   final HealthStatus? healthStatus;
-  final bool? error;
+  final bool error;
 
   bool get isFormValid => annualIncome > 0 && monthlyCosts > 0;
 
@@ -26,7 +26,7 @@ class WellnessCalculatorState extends Equatable {
         annualIncome: annualIncome ?? this.annualIncome,
         monthlyCosts: monthlyCosts ?? this.monthlyCosts,
         healthStatus: healthStatus,
-        error: error,
+        error: error ?? this.error,
       );
 
   @override

@@ -30,6 +30,7 @@ void main() {
       expect(cubit.state.annualIncome, equals(0.0));
       expect(cubit.state.monthlyCosts, equals(0.0));
       expect(cubit.state.healthStatus, equals(null));
+      expect(cubit.state.error, equals(false));
       expect(cubit.state.isFormValid, equals(false));
     });
 
@@ -91,6 +92,7 @@ void main() {
           annualIncome: 50000,
           monthlyCosts: 2000,
           healthStatus: HealthStatus.healthy,
+          error: false,
         ),
       ],
       verify: (_) {
@@ -101,6 +103,36 @@ void main() {
           ),
         ).called(1);
       },
+    );
+
+    blocTest<WellnessCalculatorCubit, WellnessCalculatorState>(
+      'sets error state when health score calculation fails',
+      setUp: () {
+        when(
+          mockHealthScoreUseCase(
+            annualIncome: 50000,
+            monthlyCosts: 2000,
+          ),
+        ).thenThrow(Exception('Failed to calculate health score'));
+      },
+      build: () => cubit,
+      act: (cubit) {
+        cubit.onAnnualIncomeChanged(50000);
+        cubit.onMonthlyCostsChanged(2000);
+        cubit.onContinuePressed();
+      },
+      expect: () => [
+        const WellnessCalculatorState(annualIncome: 50000),
+        const WellnessCalculatorState(
+          annualIncome: 50000,
+          monthlyCosts: 2000,
+        ),
+        const WellnessCalculatorState(
+          annualIncome: 50000,
+          monthlyCosts: 2000,
+          error: true,
+        ),
+      ],
     );
 
     blocTest<WellnessCalculatorCubit, WellnessCalculatorState>(

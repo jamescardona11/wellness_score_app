@@ -30,8 +30,11 @@ class WellnessCalculatorCubit extends Cubit<WellnessCalculatorState> {
         monthlyCosts: state.monthlyCosts,
       );
       emit(state.copyWith(healthStatus: healthStatusResult));
-    } catch (e) {
+    } catch (_) {
       emit(state.copyWith(error: true));
+      Future.delayed(const Duration(seconds: 3), () {
+        emit(state.copyWith(error: false));
+      });
     }
   }
 
