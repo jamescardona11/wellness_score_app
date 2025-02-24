@@ -13,7 +13,7 @@ class CardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: context.sizes.x4.paddingAll,
+      padding: context.sizes.x5.paddingAll,
       decoration: BoxDecoration(
         color: context.colors.white,
         borderRadius: context.borders.x2,

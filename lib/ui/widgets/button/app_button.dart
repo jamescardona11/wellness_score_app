@@ -66,6 +66,7 @@ class AppButton extends StatelessWidget {
   }
 
   Color? _backgroundColor(AppButtonTheme theme) {
+    if (type._isFilled && !enabled) return theme.accentColor;
     if (type._isFilled) return theme.primaryColor;
     return null;
   }
