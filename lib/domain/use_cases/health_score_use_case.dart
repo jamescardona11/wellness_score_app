@@ -2,15 +2,54 @@ import 'package:wellness_score_app/config/constants/analytics_constants.dart';
 import 'package:wellness_score_app/domain/repositories/analytics_repository.dart';
 import 'package:wellness_score_app/domain/types/health_status.dart';
 
+/// A use case that calculates a user's financial health status based on their income and expenses.
+///
+/// The calculation takes into account:
+/// * Annual income (before tax)
+/// * Monthly costs
+/// * Tax rate (currently fixed at 8%)
+///
+/// The health score is determined by calculating the ratio between annual expenses
+/// and net income (after tax):
+///
+/// * Healthy: Ratio ≤ 25% of net income
+/// * Medium: Ratio between 25% and 75% of net income
+/// * Low: Ratio > 75% of net income
+///
+/// Example:
+/// ```dart
+/// final healthScore = HealthScoreUseCase(analyticsRepository);
+/// final status = healthScore(
+///   annualIncome: 100000,
+///   monthlyCosts: 2000,
+/// );
+/// ```
 class HealthScoreUseCase {
   final AnalyticsRepository _analyticsRepository;
 
+  /// Creates a new instance of [HealthScoreUseCase].
+  ///
+  /// Requires an [AnalyticsRepository] to track score calculations.
   HealthScoreUseCase(this._analyticsRepository);
 
+  /// The tax rate applied to annual income (currently 8%).
   static const _TAX_RATE = 0.08;
+
+  /// The threshold ratio for healthy financial status (25% of net income).
   static const _HEALTHY_THRESHOLD = 0.25;
+
+  /// The threshold ratio for medium financial status (75% of net income).
   static const _MEDIUM_THRESHOLD = 0.75;
 
+  /// Calculates the financial health status based on income and costs.
+  ///
+  /// Parameters:
+  /// * [annualIncome]: The user's annual income before tax
+  /// * [monthlyCosts]: The user's average monthly expenses
+  ///
+  /// Returns a [HealthStatus] indicating the financial health level.
+  ///
+  /// Throws an [AssertionError] if either income or costs are negative.
   HealthStatus call({
     required double annualIncome,
     required double monthlyCosts,

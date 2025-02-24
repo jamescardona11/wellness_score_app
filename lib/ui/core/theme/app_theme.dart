@@ -30,6 +30,12 @@ abstract class AppTheme {
   }
 }
 
+/// A theme extension for the wellness theme.
+///
+/// This class extends [ThemeExtension] and defines the theme properties for the wellness theme.
+/// It includes properties for colors, sizes, typography, and input field theme.
+///
+
 class WellnessTheme extends ThemeExtension<WellnessTheme> {
   final Tokens tokens;
   final AppButtonTheme buttonTheme;

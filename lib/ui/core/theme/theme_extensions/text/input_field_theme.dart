@@ -3,6 +3,19 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:wellness_score_app/ui/core/theme/theme.dart';
 
+/// A theme extension for the input field widget.
+///
+/// This class extends [ThemeExtension] and defines the theme properties for the input field widget.
+/// It includes properties for width, height, text style, content padding, icon padding, text color,
+/// border color, error border color, icon color, and border radius.
+///
+/// Example usage:
+/// ```dart
+/// final inputFieldTheme = AppInputFieldTheme(
+///   tokens: tokens,
+/// );
+/// ```
+
 class AppInputFieldTheme extends ThemeExtension<AppInputFieldTheme> {
   final Tokens tokens;
   final double width;

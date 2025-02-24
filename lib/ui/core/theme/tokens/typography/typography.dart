@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+/// A theme extension for typography.
+///
+/// This class extends [ThemeExtension] and defines the typography properties for the application.
+/// It includes properties for different text styles such as heading, subtitle, button, paragraph,
+/// and description.
+///
+
 class AppTypography extends ThemeExtension<AppTypography> {
   static final typography = AppTypography._(
     headingLG: GoogleFonts.rubik(

@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 import 'base_colors.dart';
 import 'utils/color_premul_lerp.dart';
 
-// Color palette
+/// Light color tokens.
+///
+/// This class extends [BaseColors] and provides specific color values for the light theme.
+/// It includes properties for background, primary, foreground, and various shades of grey.
+///
 final class LightColors extends BaseColors {
   static const def = LightColors._(
     white: Colors.white,

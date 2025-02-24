@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+/// A theme extension for shadow tokens.
+///
+/// This class extends [ThemeExtension] and defines the shadow properties for the application.
+/// It includes properties for different shadows.
+///
+
 @immutable
 class AppShadows extends ThemeExtension<AppShadows> {
   static const shadows = AppShadows(
