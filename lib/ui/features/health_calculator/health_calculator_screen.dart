@@ -102,7 +102,10 @@ class _ScoreCalculatorForm extends StatelessWidget {
             return AppButton.filled(
               label: TextConstants.continueButton,
               enabled: isFormValid,
-              onPressed: cubit.onContinuePressed,
+              onPressed: () {
+                FocusScope.of(context).unfocus();
+                cubit.onContinuePressed();
+              },
             );
           },
         ),
