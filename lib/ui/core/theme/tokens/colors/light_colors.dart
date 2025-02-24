@@ -18,13 +18,15 @@ final class LightColors extends BaseColors {
     Color? foreground,
     Color? grey50,
     Color? grey100,
+    Color? grey200,
     Color? red,
   }) : super(
           primary: primary ?? const Color(0xFF001C95),
           background: background ?? const Color(0xFFE9EEF2),
           foreground: foreground ?? const Color(0xFF1E2A32),
-          grey50: grey50 ?? const Color(0xFF4D6475),
+          grey50: grey50 ?? const Color(0xFFCBD5DC),
           grey100: grey100 ?? const Color(0xFF708797),
+          grey200: grey200 ?? const Color(0xFF4D6475),
           red: red ?? const Color(0xFFE57373),
         );
 
@@ -37,6 +39,7 @@ final class LightColors extends BaseColors {
     Color? foreground,
     Color? grey50,
     Color? grey100,
+    Color? grey200,
     Color? red,
   }) {
     return LightColors._(
@@ -47,6 +50,7 @@ final class LightColors extends BaseColors {
       foreground: foreground ?? this.foreground,
       grey50: grey50 ?? this.grey50,
       grey100: grey100 ?? this.grey100,
+      grey200: grey200 ?? this.grey200,
       red: red ?? this.red,
     );
   }
@@ -63,6 +67,7 @@ final class LightColors extends BaseColors {
       foreground: colorPremulLerp(foreground, other.foreground, t)!,
       grey50: colorPremulLerp(grey50, other.grey50, t)!,
       grey100: colorPremulLerp(grey100, other.grey100, t)!,
+      grey200: colorPremulLerp(grey200, other.grey200, t)!,
       red: colorPremulLerp(red, other.red, t)!,
     );
   }

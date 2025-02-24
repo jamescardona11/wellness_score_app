@@ -12,6 +12,7 @@ abstract base class BaseColors extends ThemeExtension<BaseColors> {
   final Color foreground;
   final Color grey50;
   final Color grey100;
+  final Color grey200;
   final Color red;
 
   const BaseColors({
@@ -22,6 +23,7 @@ abstract base class BaseColors extends ThemeExtension<BaseColors> {
     required this.foreground,
     required this.grey50,
     required this.grey100,
+    required this.grey200,
     required this.red,
   });
 

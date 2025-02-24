@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'theme.dart';
+import 'theme_extensions/text/input_field_theme.dart';
 
 abstract class AppTheme {
   static ThemeData get lightTheme {
@@ -15,6 +16,9 @@ abstract class AppTheme {
           buttonTheme: AppButtonTheme(
             tokens: tokens,
           ),
+          inputFieldTheme: AppInputFieldTheme(
+            tokens: tokens,
+          ),
         ),
       ],
     );
@@ -24,10 +28,12 @@ abstract class AppTheme {
 class WellnessTheme extends ThemeExtension<WellnessTheme> {
   final Tokens tokens;
   final AppButtonTheme buttonTheme;
+  final AppInputFieldTheme inputFieldTheme;
 
   WellnessTheme._({
     required this.tokens,
     required this.buttonTheme,
+    required this.inputFieldTheme,
   });
 
   static WellnessTheme of(BuildContext context) => context.theme;
@@ -42,10 +48,12 @@ class WellnessTheme extends ThemeExtension<WellnessTheme> {
   WellnessTheme copyWith({
     Tokens? tokens,
     AppButtonTheme? buttonTheme,
+    AppInputFieldTheme? inputFieldTheme,
   }) {
     return WellnessTheme._(
       tokens: tokens ?? this.tokens,
       buttonTheme: buttonTheme ?? this.buttonTheme,
+      inputFieldTheme: inputFieldTheme ?? this.inputFieldTheme,
     );
   }
 
@@ -56,6 +64,7 @@ class WellnessTheme extends ThemeExtension<WellnessTheme> {
     return WellnessTheme._(
       tokens: tokens.lerp(other.tokens, t),
       buttonTheme: buttonTheme.lerp(other.buttonTheme, t),
+      inputFieldTheme: inputFieldTheme.lerp(other.inputFieldTheme, t),
     );
   }
 }
