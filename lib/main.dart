@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'ui/core/theme/app_theme.dart';
-import 'ui/widgets/button/app_button.dart';
+import 'ui/features/health_calculator/health_calculator_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,29 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Material App',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: const HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('AppBar Text'),
-      ),
-      body: Center(
-        child: AppButton.outlined(
-          label: 'Button',
-          enabled: false,
-          onPressed: () {},
-        ),
-      ),
+      home: const HealthCalculatorScreen(),
     );
   }
 }

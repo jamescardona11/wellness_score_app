@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'theme.dart';
-import 'theme_extensions/text/input_field_theme.dart';
 
 abstract class AppTheme {
   static ThemeData get lightTheme {
@@ -10,6 +9,11 @@ abstract class AppTheme {
       useMaterial3: true,
     ).copyWith(
       scaffoldBackgroundColor: tokens.colors.background,
+      appBarTheme: AppBarTheme(
+        backgroundColor: tokens.colors.background,
+        elevation: 0,
+        toolbarHeight: 80,
+      ),
       extensions: [
         WellnessTheme._(
           tokens: tokens,
