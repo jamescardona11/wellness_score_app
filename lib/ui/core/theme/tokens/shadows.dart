@@ -5,7 +5,7 @@ class AppShadows extends ThemeExtension<AppShadows> {
   static const shadows = AppShadows(
     sm: [
       BoxShadow(
-        color: Color(0x28000000),
+        color: Color(0x1E2A3214),
         offset: Offset(0, 2),
         blurRadius: 10,
       ),
