@@ -10,7 +10,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final sizes = context.theme.tokens.sizes;
+    final sizes = context.sizes;
 
     return AppBar(
       title: SvgPicture.asset(AppAssets.logo, height: sizes.x5),

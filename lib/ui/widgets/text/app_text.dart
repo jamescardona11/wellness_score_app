@@ -59,7 +59,7 @@ class AppText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appliedStyle = TextStyle(
-      color: color ?? context.theme.tokens.colors.foreground,
+      color: color ?? context.colors.foreground,
     ).merge(style);
 
     return Text(

@@ -43,7 +43,7 @@ class FinanceInputField extends StatelessWidget {
             padding: theme.iconPadding,
             child: Icon(
               AppIcons.dollarIcon,
-              size: context.tokens.sizes.x6,
+              size: context.sizes.x6,
               color: theme.iconColor,
             ),
           ),
@@ -67,7 +67,7 @@ class FinanceInputField extends StatelessWidget {
         ),
         validator: (value) {
           if (value == null || value.isEmpty || _stringValueToDouble(value) == 0) {
-            return validatorMessage ?? EnConstants.enterValueGreaterThanZero;
+            return validatorMessage ?? TextConstants.enterValueGreaterThanZero;
           }
           return null;
         },
