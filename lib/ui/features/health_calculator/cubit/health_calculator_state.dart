@@ -4,24 +4,24 @@ part of 'health_calculator_cubit.dart';
 class HealthCalculatorState {
   final double annualIncome;
   final double monthlyCosts;
-  final HealthStatus? healthScore;
+  final HealthStatus? healthStatus;
 
   bool get isFormValid => annualIncome > 0 && monthlyCosts > 0;
 
   const HealthCalculatorState({
     this.annualIncome = 0,
     this.monthlyCosts = 0,
-    this.healthScore,
+    this.healthStatus,
   });
 
   HealthCalculatorState copyWith({
     double? annualIncome,
     double? monthlyCosts,
-    HealthStatus? healthScore,
+    HealthStatus? healthStatus,
   }) =>
       HealthCalculatorState(
         annualIncome: annualIncome ?? this.annualIncome,
         monthlyCosts: monthlyCosts ?? this.monthlyCosts,
-        healthScore: healthScore ?? this.healthScore,
+        healthStatus: healthStatus ?? this.healthStatus,
       );
 }

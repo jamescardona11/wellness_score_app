@@ -1,5 +1,5 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
 import 'package:wellness_score_app/domain/types/health_status.dart';
 import 'package:wellness_score_app/domain/use_cases/health_score_use_case.dart';
 
@@ -23,11 +23,11 @@ class HealthCalculatorCubit extends Cubit<HealthCalculatorState> {
   void onContinuePressed() {
     if (!state.isFormValid) return;
 
-    final healthScore = healthScoreUseCase.call(
+    final healthScoreResult = healthScoreUseCase.call(
       annualIncome: state.annualIncome,
       monthlyCosts: state.monthlyCosts,
     );
 
-    emit(state.copyWith(healthScore: healthScore));
+    emit(state.copyWith(healthStatus: healthScoreResult));
   }
 }

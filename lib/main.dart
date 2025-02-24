@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'ui/core/theme/app_theme.dart';
-import 'ui/features/health_calculator/health_calculator_screen.dart';
+import 'package:wellness_score_app/config/navigator/app_router.dart';
+import 'package:wellness_score_app/ui/core/theme/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Material App',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: const HealthCalculatorScreen(),
+      routerConfig: AppRouter.router,
     );
   }
 }

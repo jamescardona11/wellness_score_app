@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:wellness_score_app/config/assets/app_assets.dart';
 import 'package:wellness_score_app/config/constants/en_text_constants.dart';
+import 'package:wellness_score_app/config/navigator/app_router.dart';
 import 'package:wellness_score_app/data/repositories/mock_analytics_repository.dart';
 import 'package:wellness_score_app/domain/use_cases/health_score_use_case.dart';
 import 'package:wellness_score_app/ui/core/theme/theme.dart';
@@ -29,41 +31,52 @@ class HealthCalculatorScreen extends StatelessWidget {
       create: (context) => HealthCalculatorCubit(
         healthScoreUseCase: HealthScoreUseCase(MockAnalyticsRepository()),
       ),
-      child: Scaffold(
-        resizeToAvoidBottomInset: true,
-        appBar: const AppBarWidget(),
-        body: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
-          child: SingleChildScrollView(
-            reverse: true,
-            child: Padding(
-              padding: sizes.x5.paddingHorizontal,
-              child: Column(
-                children: [
-                  Padding(
-                    padding: sizes.x5.paddingVertical,
-                    child: const RichTextHeader(
-                      span1: TextConstants.financialWellnessScore,
-                      span2: TextConstants.financialWellnessScoreDescription,
+      child: BlocListener<HealthCalculatorCubit, HealthCalculatorState>(
+        listenWhen: (p, c) => p.healthStatus != c.healthStatus,
+        listener: (context, state) {
+          final status = state.healthStatus;
+
+          context.push(
+            AppRouter.result,
+            extra: status,
+          );
+        },
+        child: Scaffold(
+          resizeToAvoidBottomInset: true,
+          appBar: const AppBarWidget(),
+          body: GestureDetector(
+            onTap: () => FocusScope.of(context).unfocus(),
+            child: SingleChildScrollView(
+              reverse: true,
+              child: Padding(
+                padding: sizes.x5.paddingHorizontal,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: sizes.x5.paddingVertical,
+                      child: const RichTextHeader(
+                        span1: TextConstants.financialWellnessScore,
+                        span2: TextConstants.financialWellnessScoreDescription,
+                      ),
                     ),
-                  ),
-                  CardWidget(
-                    child: Column(
-                      children: [
-                        SvgPicture.asset(AppAssets.score, height: sizes.x12),
-                        SizedBox(height: sizes.x4),
-                        AppText.title2(TextConstants.financialWellnessTest),
-                        AppText.paragraph2(
-                          TextConstants.financialWellnessTestDescription,
-                          color: colors.grey100,
-                        ),
-                        SizedBox(height: sizes.x4),
-                        const _ScoreCalculatorForm(),
-                      ],
+                    CardWidget(
+                      child: Column(
+                        children: [
+                          SvgPicture.asset(AppAssets.score, height: sizes.x12),
+                          SizedBox(height: sizes.x4),
+                          AppText.title2(TextConstants.financialWellnessTest),
+                          AppText.paragraph2(
+                            TextConstants.financialWellnessTestDescription,
+                            color: colors.grey100,
+                          ),
+                          SizedBox(height: sizes.x4),
+                          const _ScoreCalculatorForm(),
+                        ],
+                      ),
                     ),
-                  ),
-                  const SecureWidget(),
-                ],
+                    const SecureWidget(),
+                  ],
+                ),
               ),
             ),
           ),
