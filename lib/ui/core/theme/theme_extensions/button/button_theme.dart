@@ -31,7 +31,7 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
         accentColor = accentColor ?? tokens.colors.grey50,
         borderRadius = borderRadius ?? tokens.borders.x8,
         borderWidth = borderWidth ?? tokens.sizes.x,
-        labelStyle = labelStyle ?? tokens.typography.paragraph1;
+        labelStyle = labelStyle ?? tokens.typography.button;
 
   @override
   AppButtonTheme copyWith({

@@ -8,9 +8,9 @@ abstract class AppTheme {
     return ThemeData.light(
       useMaterial3: true,
     ).copyWith(
-      scaffoldBackgroundColor: tokens.colors.background,
+      scaffoldBackgroundColor: tokens.colors.white,
       appBarTheme: AppBarTheme(
-        backgroundColor: tokens.colors.background,
+        backgroundColor: tokens.colors.white,
         elevation: 0,
         toolbarHeight: 80,
         surfaceTintColor: Colors.transparent,

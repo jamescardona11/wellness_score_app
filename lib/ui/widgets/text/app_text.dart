@@ -2,54 +2,54 @@ import 'package:flutter/material.dart';
 import 'package:wellness_score_app/ui/core/theme/theme.dart';
 
 class AppText extends StatelessWidget {
-  AppText.title1(
+  AppText.headingLG(
     this.text, {
     super.key,
     this.color,
     this.textAlign,
-  }) : style = AppTypography.typography.title1;
+  }) : style = AppTypography.typography.headingLG;
 
-  AppText.title2(
+  AppText.headingXS(
     this.text, {
     super.key,
     this.color,
     this.textAlign,
-  }) : style = AppTypography.typography.title2;
+  }) : style = AppTypography.typography.headingXS;
 
-  AppText.subtitle1(
+  AppText.subtitleLG(
     this.text, {
     super.key,
     this.color,
     this.textAlign,
-  }) : style = AppTypography.typography.subtitle1;
+  }) : style = AppTypography.typography.subtitleLG;
 
-  AppText.subtitle2(
+  AppText.subtitleXS(
     this.text, {
     super.key,
     this.color,
     this.textAlign,
-  }) : style = AppTypography.typography.subtitle2;
+  }) : style = AppTypography.typography.subtitleXS;
 
-  AppText.paragraph1(
+  AppText.button(
     this.text, {
     super.key,
     this.color,
     this.textAlign,
-  }) : style = AppTypography.typography.paragraph1;
+  }) : style = AppTypography.typography.button;
 
-  AppText.paragraph2(
+  AppText.paragraph(
     this.text, {
     super.key,
     this.color,
     this.textAlign,
-  }) : style = AppTypography.typography.paragraph2;
+  }) : style = AppTypography.typography.paragraph;
 
-  AppText.paragraph3(
+  AppText.description(
     this.text, {
     super.key,
     this.color,
     this.textAlign,
-  }) : style = AppTypography.typography.paragraph3;
+  }) : style = AppTypography.typography.description;
 
   final String text;
   final Color? color;

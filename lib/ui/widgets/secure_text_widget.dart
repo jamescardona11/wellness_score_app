@@ -24,7 +24,7 @@ class SecureTextWidget extends StatelessWidget {
             color: colors.grey200,
           ),
           SizedBox(height: sizes.x4),
-          AppText.paragraph3(
+          AppText.description(
             TextConstants.secureInformation,
             color: colors.grey100,
             textAlign: TextAlign.center,

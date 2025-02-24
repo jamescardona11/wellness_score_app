@@ -27,6 +27,7 @@ class HealthCalculatorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = context.colors;
     final sizes = context.sizes;
+
     return BlocProvider(
       create: (context) => HealthCalculatorCubit(
         healthScoreUseCase: HealthScoreUseCase(MockAnalyticsRepository()),
@@ -67,8 +68,8 @@ class HealthCalculatorScreen extends StatelessWidget {
                         children: [
                           SvgPicture.asset(AppAssets.score, height: sizes.x12),
                           SizedBox(height: sizes.x4),
-                          AppText.title2(TextConstants.financialWellnessTest),
-                          AppText.paragraph2(
+                          AppText.headingXS(TextConstants.financialWellnessTest),
+                          AppText.paragraph(
                             TextConstants.financialWellnessTestDescription,
                             color: colors.grey100,
                           ),

@@ -23,7 +23,7 @@ final class LightColors extends BaseColors {
     Color? red,
   }) : super(
           primary: primary ?? const Color(0xFF001C95),
-          background: background ?? const Color(0xFFE9EEF2),
+          background: background ?? const Color(0xFFF4F8FA),
           foreground: foreground ?? const Color(0xFF1E2A32),
           grey50: grey50 ?? const Color(0xFFCBD5DC),
           grey100: grey100 ?? const Color(0xFF708797),

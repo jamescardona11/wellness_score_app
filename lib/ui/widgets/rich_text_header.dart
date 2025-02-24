@@ -20,13 +20,13 @@ class RichTextHeader extends StatelessWidget {
       textAlign: TextAlign.center,
       text: TextSpan(
         text: span1,
-        style: typography.subtitle2.copyWith(
+        style: typography.subtitleXS.copyWith(
           color: colors.primary,
         ),
         children: [
           TextSpan(
             text: span2,
-            style: typography.subtitle1.copyWith(
+            style: typography.subtitleLG.copyWith(
               color: colors.primary,
             ),
           ),

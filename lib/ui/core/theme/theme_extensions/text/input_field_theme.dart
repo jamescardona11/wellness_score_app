@@ -30,7 +30,7 @@ class AppInputFieldTheme extends ThemeExtension<AppInputFieldTheme> {
     BorderRadius? borderRadius,
   })  : width = width ?? double.infinity,
         height = height ?? tokens.sizes.x14,
-        style = style ?? tokens.typography.title1.copyWith(color: tokens.colors.grey300),
+        style = style ?? tokens.typography.headingLG.copyWith(color: tokens.colors.grey300),
         contentPadding = contentPadding ?? EdgeInsets.symmetric(horizontal: tokens.sizes.x3, vertical: tokens.sizes.x4),
         iconPadding = iconPadding ?? EdgeInsets.only(left: tokens.sizes.x3, right: tokens.sizes.x2),
         textColor = textColor ?? tokens.colors.grey300,

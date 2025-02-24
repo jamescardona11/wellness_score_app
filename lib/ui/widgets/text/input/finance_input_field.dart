@@ -30,13 +30,12 @@ class FinanceInputField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        AppText.paragraph3(label),
+        AppText.description(label),
         SizedBox(height: sizes.x1),
         SizedBox(
           width: theme.width,
           height: theme.height,
           child: TextFormField(
-            maxLength: 17,
             onChanged: (value) => onChanged(_stringValueToDouble(value)),
             keyboardType: TextInputType.number,
             inputFormatters: [CurrencyTextInputFormatter()],

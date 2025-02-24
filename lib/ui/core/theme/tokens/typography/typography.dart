@@ -3,37 +3,37 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTypography extends ThemeExtension<AppTypography> {
   static final typography = AppTypography._(
-    title1: GoogleFonts.rubik(
+    headingLG: GoogleFonts.rubik(
       fontWeight: FontWeight.w500,
       fontSize: 24,
       height: 28.8 / 24,
     ),
-    title2: GoogleFonts.rubik(
+    headingXS: GoogleFonts.rubik(
       fontWeight: FontWeight.w500,
       fontSize: 20,
       height: 24 / 20,
     ),
-    subtitle1: GoogleFonts.workSans(
+    subtitleLG: GoogleFonts.workSans(
       fontWeight: FontWeight.w600,
       fontSize: 20,
       height: 24 / 20,
     ),
-    subtitle2: GoogleFonts.workSans(
+    subtitleXS: GoogleFonts.workSans(
       fontWeight: FontWeight.w400,
       fontSize: 18,
       height: 27 / 18,
     ),
-    paragraph1: GoogleFonts.workSans(
+    button: GoogleFonts.workSans(
       fontWeight: FontWeight.w500,
       fontSize: 16,
       height: 16 / 16,
     ),
-    paragraph2: GoogleFonts.workSans(
+    paragraph: GoogleFonts.workSans(
       fontWeight: FontWeight.w400,
       fontSize: 14,
       height: 21 / 14,
     ),
-    paragraph3: GoogleFonts.workSans(
+    description: GoogleFonts.workSans(
       fontWeight: FontWeight.w400,
       fontSize: 12,
       height: 18 / 12,
@@ -41,41 +41,41 @@ class AppTypography extends ThemeExtension<AppTypography> {
   );
 
   const AppTypography._({
-    required this.title1,
-    required this.title2,
-    required this.subtitle1,
-    required this.subtitle2,
-    required this.paragraph1,
-    required this.paragraph2,
-    required this.paragraph3,
+    required this.headingLG,
+    required this.headingXS,
+    required this.subtitleLG,
+    required this.subtitleXS,
+    required this.button,
+    required this.paragraph,
+    required this.description,
   });
 
-  final TextStyle title1;
-  final TextStyle title2;
-  final TextStyle subtitle1;
-  final TextStyle subtitle2;
-  final TextStyle paragraph1;
-  final TextStyle paragraph2;
-  final TextStyle paragraph3;
+  final TextStyle headingLG;
+  final TextStyle headingXS;
+  final TextStyle subtitleLG;
+  final TextStyle subtitleXS;
+  final TextStyle button;
+  final TextStyle paragraph;
+  final TextStyle description;
 
   @override
   ThemeExtension<AppTypography> copyWith({
-    TextStyle? title1,
-    TextStyle? title2,
-    TextStyle? subtitle1,
-    TextStyle? subtitle2,
-    TextStyle? paragraph1,
-    TextStyle? paragraph2,
-    TextStyle? paragraph3,
+    TextStyle? headingLG,
+    TextStyle? headingXS,
+    TextStyle? subtitleLG,
+    TextStyle? subtitleXS,
+    TextStyle? button,
+    TextStyle? paragraph,
+    TextStyle? description,
   }) {
     return AppTypography._(
-      title1: title1 ?? this.title1,
-      title2: title2 ?? this.title2,
-      subtitle1: subtitle1 ?? this.subtitle1,
-      subtitle2: subtitle2 ?? this.subtitle2,
-      paragraph1: paragraph1 ?? this.paragraph1,
-      paragraph2: paragraph2 ?? this.paragraph2,
-      paragraph3: paragraph3 ?? this.paragraph3,
+      headingLG: headingLG ?? this.headingLG,
+      headingXS: headingXS ?? this.headingXS,
+      subtitleLG: subtitleLG ?? this.subtitleLG,
+      subtitleXS: subtitleXS ?? this.subtitleXS,
+      button: button ?? this.button,
+      paragraph: paragraph ?? this.paragraph,
+      description: description ?? this.description,
     );
   }
 
@@ -84,13 +84,13 @@ class AppTypography extends ThemeExtension<AppTypography> {
     if (other is! AppTypography) return this;
 
     return AppTypography._(
-      title1: TextStyle.lerp(title1, other.title1, t)!,
-      title2: TextStyle.lerp(title2, other.title2, t)!,
-      subtitle1: TextStyle.lerp(subtitle1, other.subtitle1, t)!,
-      subtitle2: TextStyle.lerp(subtitle2, other.subtitle2, t)!,
-      paragraph1: TextStyle.lerp(paragraph1, other.paragraph1, t)!,
-      paragraph2: TextStyle.lerp(paragraph2, other.paragraph2, t)!,
-      paragraph3: TextStyle.lerp(paragraph3, other.paragraph3, t)!,
+      headingLG: TextStyle.lerp(headingLG, other.headingLG, t)!,
+      headingXS: TextStyle.lerp(headingXS, other.headingXS, t)!,
+      subtitleLG: TextStyle.lerp(subtitleLG, other.subtitleLG, t)!,
+      subtitleXS: TextStyle.lerp(subtitleXS, other.subtitleXS, t)!,
+      button: TextStyle.lerp(button, other.button, t)!,
+      paragraph: TextStyle.lerp(paragraph, other.paragraph, t)!,
+      description: TextStyle.lerp(description, other.description, t)!,
     );
   }
 }
