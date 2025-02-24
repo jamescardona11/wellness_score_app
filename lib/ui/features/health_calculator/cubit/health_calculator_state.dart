@@ -1,7 +1,7 @@
 part of 'health_calculator_cubit.dart';
 
 @immutable
-class HealthCalculatorState {
+class HealthCalculatorState with EquatableMixin {
   final double annualIncome;
   final double monthlyCosts;
   final HealthStatus? healthStatus;
@@ -22,6 +22,13 @@ class HealthCalculatorState {
       HealthCalculatorState(
         annualIncome: annualIncome ?? this.annualIncome,
         monthlyCosts: monthlyCosts ?? this.monthlyCosts,
-        healthStatus: healthStatus ?? this.healthStatus,
+        healthStatus: healthStatus,
       );
+
+  @override
+  List<Object?> get props => [
+        annualIncome,
+        monthlyCosts,
+        healthStatus,
+      ];
 }

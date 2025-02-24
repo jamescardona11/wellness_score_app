@@ -4,18 +4,19 @@ import 'package:wellness_score_app/config/assets/app_assets.dart';
 import 'package:wellness_score_app/ui/core/theme/theme.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarWidget({super.key, this.automaticallyImplyLeading = true});
-
-  final bool automaticallyImplyLeading;
+  const AppBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     final sizes = context.sizes;
 
     return AppBar(
-      title: SvgPicture.asset(AppAssets.logo, height: sizes.x5),
+      title: Hero(
+        tag: 'app_logo',
+        child: SvgPicture.asset(AppAssets.logo, height: sizes.x5),
+      ),
+      automaticallyImplyLeading: false,
       centerTitle: true,
-      automaticallyImplyLeading: automaticallyImplyLeading,
     );
   }
 

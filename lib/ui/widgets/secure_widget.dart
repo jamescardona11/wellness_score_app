@@ -15,7 +15,7 @@ class SecureWidget extends StatelessWidget {
     final colors = context.colors;
     final sizes = context.sizes;
     return Padding(
-      padding: sizes.x3.paddingVertical,
+      padding: EdgeInsets.only(bottom: sizes.x2, top: sizes.x8),
       child: Column(
         children: [
           Icon(

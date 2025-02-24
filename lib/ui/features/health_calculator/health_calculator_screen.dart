@@ -32,14 +32,17 @@ class HealthCalculatorScreen extends StatelessWidget {
         healthScoreUseCase: HealthScoreUseCase(MockAnalyticsRepository()),
       ),
       child: BlocListener<HealthCalculatorCubit, HealthCalculatorState>(
-        listenWhen: (p, c) => p.healthStatus != c.healthStatus,
+        listenWhen: (p, c) => c.healthStatus != null,
         listener: (context, state) {
           final status = state.healthStatus;
+          final cubit = context.read<HealthCalculatorCubit>();
 
-          context.push(
-            AppRouter.result,
-            extra: status,
-          );
+          context
+              .push(
+                AppRouter.result,
+                extra: status,
+              )
+              .then((_) => cubit.reset());
         },
         child: Scaffold(
           resizeToAvoidBottomInset: true,
