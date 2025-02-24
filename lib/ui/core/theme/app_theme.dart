@@ -13,6 +13,7 @@ abstract class AppTheme {
         backgroundColor: tokens.colors.background,
         elevation: 0,
         toolbarHeight: 80,
+        surfaceTintColor: Colors.transparent,
       ),
       extensions: [
         WellnessTheme._(

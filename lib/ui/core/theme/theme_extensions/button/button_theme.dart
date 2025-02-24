@@ -28,7 +28,7 @@ class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
         height = height ?? tokens.sizes.x14,
         primaryColor = primaryColor ?? tokens.colors.primary,
         secondaryColor = secondaryColor ?? tokens.colors.white,
-        accentColor = accentColor ?? tokens.colors.grey100,
+        accentColor = accentColor ?? tokens.colors.grey50,
         borderRadius = borderRadius ?? tokens.borders.x8,
         borderWidth = borderWidth ?? tokens.sizes.x,
         labelStyle = labelStyle ?? tokens.typography.paragraph1;
