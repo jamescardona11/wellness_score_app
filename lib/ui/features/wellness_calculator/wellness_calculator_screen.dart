@@ -34,7 +34,7 @@ class WellnessCalculatorScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => cubit ?? getIt<WellnessCalculatorCubit>(),
       child: BlocListener<WellnessCalculatorCubit, WellnessCalculatorState>(
-        listenWhen: (p, c) => c.error != null,
+        listenWhen: (p, c) => p.error != c.error && c.error == true,
         listener: (context, state) {
           if (state.error == true) {
             SnackBarError.show(context, message: TextConstants.errorCalculatingScore);

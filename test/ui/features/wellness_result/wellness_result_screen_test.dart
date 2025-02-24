@@ -73,7 +73,7 @@ void main() {
     });
 
     testWidgets('should navigate back when return button is pressed', (tester) async {
-      when(mockGoRouter.pop()).thenReturn(true);
+      when(mockGoRouter.pop()).thenAnswer((_) async => true);
 
       await tester.pumpWidgetWithMaterialApp(
         const WellnessResultScreen(
