@@ -11,8 +11,8 @@ abstract class TextConstants {
       'Your financial information is encrypted and secure. We\'ll never share or sell any of your personal data.';
 
   static const String returnButton = 'Return';
-  static const String financialWellnessScoreResult = 'Your ';
-  static const String financialWellnessScoreResultDescription = 'financial wellness score';
+  static const String financialWellnessScoreResult = "Here's your ";
+  static const String financialWellnessScoreResultDescription = 'financial wellness score.';
 
   static const String scoreResultDescription = 'Your financial wellness score is';
   static const String healthyScoreResult = 'Congratulations!';
