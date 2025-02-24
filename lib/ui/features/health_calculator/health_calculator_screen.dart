@@ -12,7 +12,7 @@ import 'package:wellness_score_app/ui/widgets/app_bar_widget.dart';
 import 'package:wellness_score_app/ui/widgets/button/app_button.dart';
 import 'package:wellness_score_app/ui/widgets/card_widget.dart';
 import 'package:wellness_score_app/ui/widgets/rich_text_header.dart';
-import 'package:wellness_score_app/ui/widgets/secure_widget.dart';
+import 'package:wellness_score_app/ui/widgets/secure_text_widget.dart';
 import 'package:wellness_score_app/ui/widgets/text/app_text.dart';
 import 'package:wellness_score_app/ui/widgets/text/input/finance_input_field.dart';
 
@@ -77,7 +77,7 @@ class HealthCalculatorScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const SecureWidget(),
+                    const SecureTextWidget(),
                   ],
                 ),
               ),

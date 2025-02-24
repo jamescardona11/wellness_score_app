@@ -5,8 +5,8 @@ import 'package:wellness_score_app/ui/core/theme/theme.dart';
 
 import 'text/app_text.dart';
 
-class SecureWidget extends StatelessWidget {
-  const SecureWidget({
+class SecureTextWidget extends StatelessWidget {
+  const SecureTextWidget({
     super.key,
   });
 
