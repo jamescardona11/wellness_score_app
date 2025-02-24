@@ -66,7 +66,6 @@ class AppText extends StatelessWidget {
       text,
       style: appliedStyle,
       textAlign: textAlign,
-      overflow: TextOverflow.ellipsis,
     );
   }
 }

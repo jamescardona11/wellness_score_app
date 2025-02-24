@@ -7,4 +7,6 @@ abstract class TextConstants {
   static const String annualIncome = 'Annual income';
   static const String monthlyCosts = 'Monthly Costs';
   static const String continueButton = 'Continue';
+  static const String secureInformation =
+      'Your financial information is encrypted and secure. We\'ll never share or sell any of your personal data.';
 }
