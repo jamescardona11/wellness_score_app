@@ -8,6 +8,23 @@ import 'shadows.dart';
 import 'sizes.dart';
 import 'typography/typography.dart';
 
+/// A class that holds all the tokens for the application.
+///
+/// This class extends [ThemeExtension] and defines the tokens for the application.
+/// It includes properties for colors, sizes, typography, durations, shadows, and borders.
+///
+/// Example usage:
+/// ```dart
+/// final tokens = Tokens(
+///   colors: LightColors.def,
+///   sizes: AppSizes.sizes,
+///   typography: AppTypography.typography,
+///   durations: AppDurations.durations,
+///   shadows: AppShadows.shadows,
+///   borders: AppBorders.borders,
+/// );
+/// ```
+
 @immutable
 class Tokens extends ThemeExtension<Tokens> {
   static final Tokens light = Tokens(

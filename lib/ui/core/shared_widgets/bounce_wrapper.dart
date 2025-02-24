@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wellness_score_app/ui/core/theme/theme.dart';
 
+/// A widget that scales the child when tapped.
+///
+/// This widget provides a visual feedback by scaling the child widget when tapped.
+/// It can be configured to scale up or down when tapped.
+///
+/// The widget is built using [AnimatedBuilder] to animate the scale transformation.
+
 class BounceWrapper extends StatefulWidget {
   const BounceWrapper.up({
     super.key,

@@ -3,6 +3,15 @@ import 'package:wellness_score_app/config/constants/en_text_constants.dart';
 import 'package:wellness_score_app/ui/core/theme/theme.dart';
 import 'package:wellness_score_app/ui/widgets/text/app_text.dart';
 
+/// A utility class for displaying error messages as snackbars.
+///
+/// This class provides a static method to show a snackbar with an error message.
+/// The snackbar is styled with a red background and white text.
+///
+/// Example usage:
+/// ```dart
+/// SnackBarError.show(context, message: 'An error occurred');
+/// ```
 abstract class SnackBarError {
   static void show(
     BuildContext context, {

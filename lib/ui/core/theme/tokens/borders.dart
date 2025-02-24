@@ -2,6 +2,12 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+/// A theme extension for border tokens.
+///
+/// This class extends [ThemeExtension] and defines the border properties for the application.
+/// It includes properties for different border radius.
+///
+
 @immutable
 class AppBorders extends ThemeExtension<AppBorders> {
   static const borders = AppBorders(

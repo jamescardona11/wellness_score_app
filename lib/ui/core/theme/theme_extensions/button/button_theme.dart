@@ -3,6 +3,19 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:wellness_score_app/ui/core/theme/theme.dart';
 
+/// A theme extension for the button widget.
+///
+/// This class extends [ThemeExtension] and defines the theme properties for the button widget.
+/// It includes properties for width, height, primary color, secondary color, accent color,
+/// border radius, border width, and label style.
+///
+/// Example usage:
+/// ```dart
+/// final buttonTheme = AppButtonTheme(
+///   tokens: tokens,
+/// );
+/// ```
+
 class AppButtonTheme extends ThemeExtension<AppButtonTheme> {
   final Tokens tokens;
   final double width;

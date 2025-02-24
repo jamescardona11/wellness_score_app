@@ -2,6 +2,12 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+/// A theme extension for size tokens.
+///
+/// This class extends [ThemeExtension] and defines the size properties for the application.
+/// It includes properties for different sizes.
+///
+
 @immutable
 class AppSizes extends ThemeExtension<AppSizes> {
   static const sizes = AppSizes(

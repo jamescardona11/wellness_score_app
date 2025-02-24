@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-// Color palette
+/// Base class for color tokens.
+///
+/// This abstract class defines the core color properties that can be extended by specific color token classes.
+/// It provides a common interface for accessing and interpolating color values across different themes.
 abstract base class BaseColors extends ThemeExtension<BaseColors> {
   // Base
   final Color black;
