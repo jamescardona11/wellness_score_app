@@ -14,6 +14,7 @@ class AppInputFieldTheme extends ThemeExtension<AppInputFieldTheme> {
   final Color borderColor;
   final Color errorBorderColor;
   final Color iconColor;
+  final BorderRadius borderRadius;
 
   AppInputFieldTheme({
     required this.tokens,
@@ -26,15 +27,17 @@ class AppInputFieldTheme extends ThemeExtension<AppInputFieldTheme> {
     Color? borderColor,
     Color? errorBorderColor,
     Color? iconColor,
+    BorderRadius? borderRadius,
   })  : width = width ?? double.infinity,
         height = height ?? tokens.sizes.x14,
-        style = style ?? tokens.typography.title1.copyWith(color: tokens.colors.foreground),
+        style = style ?? tokens.typography.title1.copyWith(color: tokens.colors.grey200),
         contentPadding = contentPadding ?? EdgeInsets.symmetric(horizontal: tokens.sizes.x3, vertical: tokens.sizes.x4),
         iconPadding = iconPadding ?? EdgeInsets.only(left: tokens.sizes.x3, right: tokens.sizes.x2),
-        textColor = textColor ?? tokens.colors.foreground,
-        borderColor = borderColor ?? tokens.colors.background,
+        textColor = textColor ?? tokens.colors.grey200,
+        borderColor = borderColor ?? tokens.colors.grey50,
         errorBorderColor = errorBorderColor ?? tokens.colors.red,
-        iconColor = iconColor ?? tokens.colors.grey50;
+        iconColor = iconColor ?? tokens.colors.grey50,
+        borderRadius = borderRadius ?? tokens.borders.x1;
 
   @override
   AppInputFieldTheme copyWith({
@@ -47,6 +50,7 @@ class AppInputFieldTheme extends ThemeExtension<AppInputFieldTheme> {
     Color? borderColor,
     Color? errorBorderColor,
     Color? iconColor,
+    BorderRadius? borderRadius,
   }) {
     return AppInputFieldTheme(
       tokens: tokens,
@@ -59,6 +63,7 @@ class AppInputFieldTheme extends ThemeExtension<AppInputFieldTheme> {
       textColor: textColor ?? this.textColor,
       borderColor: borderColor ?? this.borderColor,
       errorBorderColor: errorBorderColor ?? this.errorBorderColor,
+      borderRadius: borderRadius ?? this.borderRadius,
     );
   }
 
