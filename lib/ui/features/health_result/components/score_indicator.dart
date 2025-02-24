@@ -17,7 +17,7 @@ class HealthScoreResult extends StatelessWidget {
     const barSize = Size(85, 16);
 
     final segments = _segments(healthStatus);
-    final segmentsActive = _color(healthStatus, colors);
+    final segmentsActiveColor = _color(healthStatus, colors);
 
     return Padding(
       padding: context.sizes.x5.paddingVertical,
@@ -27,21 +27,21 @@ class HealthScoreResult extends StatelessWidget {
           CustomPaint(
             size: barSize,
             painter: SegmentedProgressPainter(
-              color: segmentsActive,
+              color: segmentsActiveColor,
               curved: false,
             ),
           ),
           CustomPaint(
             size: barSize,
             painter: SegmentedProgressPainter(
-              color: segments > 1 ? segmentsActive : colors.progressBarGrey,
+              color: segments > 1 ? segmentsActiveColor : colors.progressBarGrey,
               curved: true,
             ),
           ),
           CustomPaint(
             size: barSize,
             painter: SegmentedProgressPainter(
-              color: segments > 2 ? segmentsActive : colors.progressBarGrey,
+              color: segments > 2 ? segmentsActiveColor : colors.progressBarGrey,
               curved: true,
             ),
           ),
